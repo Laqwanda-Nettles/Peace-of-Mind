@@ -6,7 +6,7 @@
 
 Day 1 focused on laying the foundation for the "Peace of Mind" project. This involved designing the wireframe/mockup, finalizing the overall design, selecting fonts and themes, setting up content for the website, and preparing the project for development. Additionally, the initial setup for external APIs and dependencies was completed.
 
-#### What I Did on Day 1:
+### What I Did on Day 1:
 
 1. **Wireframe/Mockup**
 
@@ -50,6 +50,12 @@ Day 1 focused on laying the foundation for the "Peace of Mind" project. This inv
 9. **Create Todos**
 
 - Created a list of todos for the upcoming days to track development progress and ensure a systematic approach to the project.
+
+### What I Learned
+
+- **Set Up Tailwind CSS & DaisyUI:** I configured Tailwind and DaisyUI, learning how to customize themes and extend Tailwind’s default settings. [Resource](https://daisyui.com/docs/themes/)
+- **Adding Google Fonts to Next.js:** I learned how to import Google Fonts into my Next.js project to ensure the typography was consistent with the design and feel of the app. [Resource](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
+- **Use Local Storage & Theme Switching:** I implemented a theme toggle feature, which saves user preferences (light/dark mode) in local storage and updates the UI accordingly. [Resource](https://selftaughttxg.com/2023/05-23/learn-local-storage-in-react-create-a-light-and-dark-theme-switcher-application/)
 
 ### Next Steps
 
