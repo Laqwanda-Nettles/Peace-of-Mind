@@ -1,9 +1,7 @@
-import Article from "@/components/Article";
 import Footer from "@/components/Footer";
+import HoverCard from "@/components/HoverCard";
 import Navbar from "@/components/Navbar";
 import QuoteCard from "@/components/QuoteCard";
-import Sidebar from "@/components/Sidebar";
-import ThemeToggle from "@/components/ThemeToggle";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -31,45 +29,75 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <Sidebar />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h2 className="text-4xl font-bold">Checking my fonts - Header</h2>
-        <p className="text-xl font-semibold">Checking Fonts - Body</p>
-        <button className="btn btn-active">Default</button>
-        <Article
-          imgSrc="https://www.apa.org/images/article-traumatic-stress_tcm7-286598.png"
-          title="How to cope with traumatic stress"
-          tag="stress"
-          secondTag="trauma"
-          description="Psychologists recommend people lean on loved ones, prioritize self-care, and be patient with themselves to help manage the stressful effects of trauma."
-        />
-        {loading ? (
-          <div>
-            <p>Loading Quote</p>
-            <span className="loading loading-dots loading-lg"></span>
+        <section
+          className="hero min-h-60"
+          style={{
+            backgroundImage:
+              "url(https://images.pexels.com/photos/1835016/pexels-photo-1835016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
+          }}
+        >
+          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-content text-neutral-content text-center">
+            <div className="max-w-md">
+              <h2 className="mb-5 text-5xl font-bold">
+                Welcome to Peace of Mind
+              </h2>
+              <p className="mb-5 text-xl font-semibold">
+                Your space to reflect, track your feelings, and explore
+                supportive resources.
+              </p>
+              <button className="btn btn-primary text-lg">
+                Start Journaling Today
+              </button>
+            </div>
           </div>
-        ) : (
-          <div>
-            {quotes.map((quote, index) => (
-              <QuoteCard
-                key={index}
-                quote={quote.quote}
-                author={quote.author}
-              />
-            ))}
+        </section>
+        <section className="flex flex-col items-center justify-center gap-5 w-full p-3">
+          <h2 className="text-4xl font-semibold">
+            Get Inspired — See Today&apos;s Quote
+          </h2>
+          <p className="text-2xl">
+            You&apos;re not alone on your journey. Let Peace of Mind be your
+            companion toward a balanced and fulfilled life.
+          </p>
+          {loading ? (
+            <div className="flex gap-2">
+              <p className="text-xl font-semibold">Loading Quote</p>
+              <span className="loading loading-dots loading-lg"></span>
+            </div>
+          ) : (
+            <div>
+              {quotes.map((quote, index) => (
+                <QuoteCard
+                  key={index}
+                  quote={quote.quote}
+                  author={quote.author}
+                />
+              ))}
+            </div>
+          )}
+        </section>
+        <section className="w-full flex flex-col items-center gap-5 p-3">
+          <h2 className="text-4xl font-semibold">Features</h2>
+          <div className="flex gap-5 flex-wrap justify-center">
+            <HoverCard
+              title="Personal Journal"
+              details="Write daily entries to reflect on your thoughts and experiences. Discover patterns in your emotions and watch your growth."
+              imageSrc="/journal.jpg"
+            />
+            <HoverCard
+              title="Mood Tracker"
+              details="Easily track your mood over time. Observe trends and gain insights into your emotional well-being."
+              imageSrc="/mood.jpg"
+            />
+            <HoverCard
+              title="Resources"
+              details="Explore curated resources for mindfulness, support, and inspiration whenever you need it."
+              imageSrc="/resources.jpg"
+            />
           </div>
-        )}
-        <button className="btn btn-active btn-neutral">Neutral</button>
-        <button className="btn btn-active btn-primary">Primary</button>
-        <button className="btn btn-active btn-secondary">Secondary</button>
-        <button className="btn btn-active btn-accent">Accent</button>
-        <button className="btn btn-active btn-ghost">Ghost</button>
-        <button className="btn btn-active btn-link">Link</button>
-        <ThemeToggle />
-        <button className="btn btn-info">Info</button>
-        <button className="btn btn-success">Success</button>
-        <button className="btn btn-warning">Warning</button>
-        <button className="btn btn-error">Error</button>
+        </section>
       </main>
       <Footer />
     </div>
