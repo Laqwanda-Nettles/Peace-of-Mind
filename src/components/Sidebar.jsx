@@ -18,7 +18,7 @@ export default function Sidebar() {
       </div>
       <div
         tabIndex={0}
-        className="dropdown-content menu bg-neutral-50 rounded-box z-[1] w-52 p-2 shadow h-screen text-xl font-semibold flex flex-col gap-2"
+        className="dropdown-content menu bg-neutral-50 dark:bg-base-300 rounded-box z-[1] w-52 p-2 shadow h-screen text-xl font-semibold flex flex-col gap-2"
       >
         <div className="flex items-center gap-2 border-b-2 border-b-accent p-2 hover:text-success hover:bg-base-200 hover:rounded-xl">
           <Link href="/" className="flex items-center gap-2">
