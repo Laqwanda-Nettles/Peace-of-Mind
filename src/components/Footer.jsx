@@ -16,7 +16,7 @@ export default function Footer() {
         <p className="font-bold">
           Peace of Mind
           <br />
-          "Reflect, Grow, and Find Peace in Every Day"
+          “Reflect, Grow, and Find Peace in Every Day”
         </p>
         <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
       </aside>
