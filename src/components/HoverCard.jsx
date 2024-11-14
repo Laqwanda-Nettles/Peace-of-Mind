@@ -11,13 +11,17 @@ export default function HoverCard({ imageSrc, title, details }) {
       />
 
       {/* Title Display */}
-      <div className="bg-white p-2 text-center">
-        <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
+      <div className="bg-white dark:bg-neutral p-2 text-center">
+        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
+          {title}
+        </h2>
       </div>
 
       {/* Hover Details */}
-      <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-95 p-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
-        <p className="text-gray-800 text-center">{details}</p>
+      <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-neutral bg-opacity-95 p-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
+        <p className="text-gray-800 text-center  dark:text-white text-2xl">
+          {details}
+        </p>
       </div>
     </div>
   );
