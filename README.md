@@ -83,6 +83,54 @@ For Day 2, I plan to:
 
 ![alt text](image-3.png)
 
+## Day 2: Project Development and Component Testing
+
+### Objective
+
+On Day 2, I focused on developing global components and setting up API routes, as well as implementing Storybook to test my components independently. During this process, I encountered compatibility issues between Next.js and Storybook, but I was able to resolve them by adjusting the installation command.
+
+### Checklist of Tasks Completed
+
+#### 1. Create Global Components
+
+- Navbar: Designed a reusable navigation bar to be used across different pages for consistent site navigation.
+- Sidebar (Dashboard): Built a sidebar component for the dashboard page to facilitate easy access to key sections and features within the app.
+- Footer: Created a simple footer and applied it globally.
+
+#### 2. Develop Feature-Specific Cards
+
+- QuoteCard: Developed a card component to display inspirational quotes fetched from the Ninja Quotes API.
+- Article Card: Created an article card to showcase curated articles sourced from the APA article API route.
+- HoverCard: Built an interactive card with hover effects to display detailed information upon hover, enhancing user experience and engagement.
+
+#### 3. API Routes Integration
+
+- Ninja Quotes API Route: Set up a server-side API route to fetch quotes from the Ninja Quotes API, allowing for seamless integration of motivational quotes within the app.
+- APA Article API Route: Created an API route to fetch articles from APA, giving users access to curated mental health resources.
+
+#### 4. Implement Storybook for Component Testing
+
+- Installed Storybook to create a visual testing environment for components.
+- Due to compatibility issues between Storybook and Next.js 15, I adjusted the installation command to `npx storybook@next init` instead of the latest version to ensure compatibility. This allowed me to test components like the Navbar, Sidebar, and cards independently, ensuring they function as expected in isolation.
+
+### Challenges Encountered
+
+One of the main issues I faced was the compatibility between Next.js 15 and Storybook. The `npx storybook@latest init` command resulted in errors, so I had to switch to the `npx storybook@next init` version. This workaround allowed me to install Storybook successfully and continue with component testing.
+
+### Key Takeaways
+
+#### Setting Up Global Components
+
+Creating reusable global components like the Navbar, Sidebar, and Footer improved the consistency and maintainability of the app. This structure ensures that any updates made to these components will automatically reflect across all pages.
+
+#### API Routes for Dynamic Content
+
+Implementing API routes for quotes and articles enhanced the app's interactivity by enabling real-time data fetching, which enriches the user experience. The QuoteCard and Article Card components make use of these routes to display dynamic, up-to-date content.
+
+#### Using Storybook for Isolated Component Testing
+
+Storybook proved invaluable for testing components in isolation. This approach not only helped identify issues early but also improved my workflow by providing a visual representation of each component. Adjusting the installation to use `npx storybook@next init` was an important lesson in addressing compatibility issues.
+
 ## Getting Started
 
 First, clone repository and install dependencies:
@@ -105,3 +153,9 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Photo Credits
+
+Journal Photo by Jess Bailey Designs
+Resources Photo by vectorjuice (Freepik)
+Mood Photo by pch.vector (Freepik)
