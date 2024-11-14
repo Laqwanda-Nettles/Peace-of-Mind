@@ -131,6 +131,42 @@ Implementing API routes for quotes and articles enhanced the app's interactivity
 
 Storybook proved invaluable for testing components in isolation. This approach not only helped identify issues early but also improved my workflow by providing a visual representation of each component. Adjusting the installation to use `npx storybook@next init` was an important lesson in addressing compatibility issues.
 
+## Day 3: Home Page Development
+
+### Overview
+
+On Day 2, I focused on building the homepage layout and setting up the structure for other core pages of the project. The primary goal was to create a visually appealing and responsive homepage that fits well on different screen sizes. I also added foundational components and pages for future content, laying the groundwork for further development.
+
+### Key Accomplishments
+
+#### 1. Homepage Layout and Responsive Design
+
+- **Hero Section:** Created a welcoming hero section with a background image, an inviting message, and a call-to-action button to start journaling.
+- **Quotes Section:** Integrated a section to display an inspirational quote, with loading state management to handle data retrieval from the quote API.
+- **Features Section:** Showcased key app features (Journal, Mood Tracker, Resources) using a HoverCard component for a dynamic, user-friendly experience.
+
+#### 2. Global Components Integration
+
+- **Navbar:** Added a navigation bar for easy access across pages.
+- **Footer:** Included a footer for a polished, consistent look.
+- **QuoteCard:** Created a reusable QuoteCard component for displaying quotes fetched from the API.
+- **HoverCard:** Developed an interactive HoverCard component to highlight features on hover, enhancing engagement.
+
+#### 3. Page Setup
+
+- Initialized the following pages with a static layout including the Navbar, Header, and Footer:
+  - **Journal:** Placeholder for the personal journal dashboard.
+  - **Resources:** Page for curated mental health resources.
+  - **About:** Simple layout to introduce the purpose and vision of the project.
+
+#### 4. Journal Entry Modal
+
+- Created a journal entry form modal for the Journal page, where users can write daily reflections and observations. This form will allow for future development of tracking and saving journal entries.
+
+### Next Steps
+
+- **Develop the Journal Dashboard:** Begin implementing the Journal Dashboard, where users can view and manage their journal entries and track mood over time.
+
 ## Getting Started
 
 First, clone repository and install dependencies:
@@ -159,3 +195,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Journal Photo by Jess Bailey Designs
 Resources Photo by vectorjuice (Freepik)
 Mood Photo by pch.vector (Freepik)
+Hero Image by Alexandro David
