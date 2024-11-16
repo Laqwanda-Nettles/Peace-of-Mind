@@ -1,12 +1,14 @@
 import Article from "@/components/Article";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import QuoteImageCard from "@/components/QuoteImageCard";
 
 export default function Resources() {
   return (
     <div>
       <Navbar />
       <h2>Resources</h2>
+      <QuoteImageCard />
       <Article
         imgSrc="https://www.apa.org/images/article-traumatic-stress_tcm7-286598.png"
         title="How to cope with traumatic stress"
