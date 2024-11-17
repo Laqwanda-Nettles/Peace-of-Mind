@@ -1,4 +1,4 @@
-import { articles } from "./articlesdata"; // Import articles data
+import { articles } from "./ArticlesData"; // Import articles data
 import Article from "./Article";
 
 export default function ArticlesSection() {
