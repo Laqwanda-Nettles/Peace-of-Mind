@@ -167,6 +167,76 @@ On Day 2, I focused on building the homepage layout and setting up the structure
 
 - **Develop the Journal Dashboard:** Begin implementing the Journal Dashboard, where users can view and manage their journal entries and track mood over time.
 
+## Days 4 and 5: Components, API Routes, and Journal Dashboard Updates
+
+### Overview
+
+Over the past two days, I focused on developing new components, implementing API routes, and improving the layout of the **Journal Dashboard** and **Resources** pages. While I made significant progress, I also encountered challenges that require revisiting and refining some aspects of the project.
+
+---
+
+### Key Accomplishments
+
+#### 1. **New Components**
+
+- **MoodCheck**: A component for users to quickly check in and log their current mood.
+- **MoodSummary**: Displays a summary of mood trends for the user.
+- **QuoteImageCard**: Fetches and displays a visually appealing quote image from the ZenQuotes API, now added to the **Resources** page.
+
+#### 2. **API Routes**
+
+- **Save Mood**: Created an API route for saving mood data submitted through the `MoodCheck` component. Data is stored in Redis for persistence.
+- **Get Moods**: Added an API route to retrieve stored mood data for the `MoodSummary` component.
+
+#### 3. **Journal Page Updates**
+
+- Added key sections to the **Journal Dashboard**, including:
+  - A **Welcome Message** to greet the user.
+  - The **Mood Check-In** form for logging moods.
+  - The **Mood Tracker Summary** to visualize mood trends over time.
+
+#### 4. **Resources Page**
+
+- Imported and utilized the **QuoteImageCard** component to display inspirational quotes on the **Resources** page.
+
+#### 5. **Testing**
+
+- Implemented **Storybook** testing for the `MoodCheck` component, ensuring its functionality and appearance align with expectations.
+
+---
+
+### Challenges
+
+#### 1. **Chart.js Compatibility**
+
+- Encountered issues with **Chart.js** not working on the deployed site due to compatibility problems with Next.js 19. While it works locally, the library causes errors during deployment.
+- **Next Steps**: I explored alternative chart libraries but faced similar issues. My plan is to:
+  - Research creating a custom chart solution tailored to my needs.
+  - Revisit this task after completing other components to avoid getting stuck.
+
+#### 2. **Journal Dashboard Layout**
+
+- Struggled with layout issues on smaller screens, particularly with the **Journal Dashboard** page. The grid layout did not scale well, leading to cluttered visuals.
+- **Next Steps**: Transition to a **Flexbox** layout for better adaptability across screen sizes.
+
+#### 3. **ZenQuotes API Issues**
+
+- The ZenQuotes API occasionally fails to fetch data. While reviewing the API documentation for solutions, I am considering alternatives, including building my own API for more control.
+
+---
+
+### Next Steps
+
+- **Work on the Resources and About Pages**: Take a step back from the challenging tasks (e.g., charts and ZenQuotes API) to focus on the static content and design of these pages.
+- **Revisit Journal Dashboard Layout**: Implement the Flexbox solution for better responsiveness.
+- **Explore Alternatives for Charts and Quotes**: If current tools and APIs continue to pose issues, consider custom solutions or alternative libraries.
+
+---
+
+## Summary
+
+Days 4 and 5 were productive, as I introduced new components, API routes, and features to enhance the functionality of the **Journal Dashboard** and **Resources** pages. However, challenges with compatibility and layout pushed me to prioritize and plan for incremental improvements. Stepping away from these obstacles temporarily will allow me to return with fresh ideas and solutions while making progress on other parts of the project.
+
 ## Getting Started
 
 First, clone repository and install dependencies:
