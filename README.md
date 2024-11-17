@@ -266,3 +266,9 @@ Journal Photo by Jess Bailey Designs
 Resources Photo by vectorjuice (Freepik)
 Mood Photo by pch.vector (Freepik)
 Hero Image by Alexandro David
+Sky Photo by Ithalu Dominguez
+Stars Photo by Toni Ferreira
+Light Photo by Singkham
+Road Photo by Nout Gons
+Mountain Photo by Simon Berger
+Ice Photo by Pixabay
