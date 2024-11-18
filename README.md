@@ -237,6 +237,90 @@ Over the past two days, I focused on developing new components, implementing API
 
 Days 4 and 5 were productive, as I introduced new components, API routes, and features to enhance the functionality of the **Journal Dashboard** and **Resources** pages. However, challenges with compatibility and layout pushed me to prioritize and plan for incremental improvements. Stepping away from these obstacles temporarily will allow me to return with fresh ideas and solutions while making progress on other parts of the project.
 
+## Day 6 README: Resource Page Completion
+
+### Overview
+
+On **Day 6**, I focused on completing the **Resource Page** for the **Peace of Mind** project. This page consolidates helpful resources, tools, and guidance to support mental well-being. Here’s a breakdown of the tasks and components I worked on:
+
+---
+
+### Tasks Completed
+
+1. **ArticleData Component**:
+
+   - Created a static `ArticleData` component to fetch and manage article data due to challenges with dynamic API fetching.
+   - Integrated the article data into the `ArticlesSection` for easy rendering.
+
+2. **ArticlesSection**:
+
+   - Displayed a grid of article cards with titles, descriptions, tags, and links to resources.
+   - Added a header with a motivational tagline.
+
+3. **HotlineSection**:
+
+   - Created a simple section to list crisis and prevention hotline numbers for various regions.
+   - Focused on providing direct and accessible support information.
+
+4. **Image Quotes API Route**:
+
+   - Built an API route (`/api/image-quotes`) to provide data for the `QuotesImageCard` component.
+   - Updated `QuotesImageCard` to display dynamic quote data fetched from the API.
+
+5. **BreathingExercise Component**:
+
+   - Implemented a guided breathing exercise inspired by Google's deep breathing feature.
+   - Added:
+     - A background image for calming visual aesthetics.
+     - Royalty-free audio for an immersive experience.
+     - Step transitions with animations for inhale, hold, exhale, and rest phases.
+
+6. **GuidedMeditationSection**:
+
+   - Embedded a guided meditation player from Insight Timer.
+   - Incorporated the `BreathingExercise` component for a comprehensive relaxation toolkit.
+
+7. **JournalPrompts Component**:
+
+   - Developed a dropdown-powered journal prompts feature using DaisyUI.
+   - Categorized prompts into themes like Growth, Mindset, Self-Discovery, and Reflection.
+
+8. **TipsSection Component**:
+
+   - Added a section with:
+     - Practical tips on mood tracking and journaling.
+     - Integration of the `JournalPrompts` component for easy user access.
+     - Visual elements like an image to enhance the layout.
+
+9. **Final Resource Page**:
+   - Combined all the above sections to create a cohesive and functional page.
+   - Styled with Tailwind CSS and DaisyUI to ensure a responsive and polished UI.
+
+---
+
+### Challenges and Solutions
+
+- **Challenge**: Fetching articles dynamically was inconsistent.
+  - **Solution**: Used a static data component (`ArticleData`) as a workaround for the short term.
+- **Challenge**: Randomizing quotes for the `QuoteImageCard` component.
+  - **Solution**: Implemented a utility function to select three unique quotes from the API response.
+
+---
+
+### Preview
+
+The completed Resource Page includes:
+
+- **Daily Dose of Positivity**: Motivational quotes fetched dynamically.
+- **Hotline Section**: Emergency contacts for immediate support.
+- **Self-Help Articles**: Curated reading material for mental well-being.
+- **Guided Meditation Section**: Breathing exercises and embedded audio tools.
+- **Tips Section**: Advice and journal prompts to inspire users.
+
+---
+
+This concludes Day 6, successfully completing the Resource Page for the **Peace of Mind** project. 🙂‍↕️✌️
+
 ## Getting Started
 
 First, clone repository and install dependencies:
@@ -262,13 +346,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Photo Credits
 
-Journal Photo by Jess Bailey Designs
-Resources Photo by vectorjuice (Freepik)
-Mood Photo by pch.vector (Freepik)
-Hero Image by Alexandro David
-Sky Photo by Ithalu Dominguez
-Stars Photo by Toni Ferreira
-Light Photo by Singkham
-Road Photo by Nout Gons
-Mountain Photo by Simon Berger
-Ice Photo by Pixabay
+- Journal Photo by Jess Bailey Designs
+- Resources Photo by vectorjuice (Freepik)
+- Mood Photo by pch.vector (Freepik)
+- Hero Image by Alexandro David
+- Sky Photo by Ithalu Dominguez
+- Stars Photo by Toni Ferreira
+- Light Photo by Singkham
+- Road Photo by Nout Gons
+- Mountain Photo by Simon Berger
+- Ice Photo by Pixabay
+- Meditate Photo by Freepik
+- Notebook Photo by Freepik
+
+## Royalty Free Music
+
+Song by <a href="https://stocktune.com/free-music/whispers-of-the-stream-66136-56579">StockTune</a>
