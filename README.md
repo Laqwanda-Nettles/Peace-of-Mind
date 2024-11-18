@@ -319,7 +319,7 @@ The completed Resource Page includes:
 
 ---
 
-This concludes Day 6, successfully completing the Resource Page for the **Peace of Mind** project. 🙂‍↕️✌️
+This concludes Day 6, successfully completing the Resource Page for the **Peace of Mind** project. 😌✌️
 
 ## Getting Started
 
