@@ -1,8 +1,10 @@
 import ArticlesSection from "@/components/ArticlesSection";
 import Footer from "@/components/Footer";
+import GuidedMeditationSection from "@/components/GuidedMeditationSection";
 import HotlineSection from "@/components/HotlineSection";
 import Navbar from "@/components/Navbar";
 import QuoteImageCard from "@/components/QuoteImageCard";
+import TipsSections from "@/components/TipsSection";
 import { useEffect, useState } from "react";
 
 export default function Resources() {
@@ -39,8 +41,8 @@ export default function Resources() {
   return (
     <div>
       <Navbar />
-      <div className="bg-gradient-to-r from-primary to-secondary curved-header h-28 p-4 mb-4">
-        <h2 className="text-4xl font-bold text-center text-gray-900">
+      <div className="bg-gradient-to-r from-primary to-secondary curved-header h-36 p-4 mb-4">
+        <h2 className="text-5xl font-bold text-center text-gray-900">
           Resources
         </h2>
         <p className="text-2xl font-semibold text-center text-gray-900">
@@ -69,6 +71,8 @@ export default function Resources() {
       </section>
       <HotlineSection />
       <ArticlesSection />
+      <GuidedMeditationSection />
+      <TipsSections />
       <Footer />
     </div>
   );
