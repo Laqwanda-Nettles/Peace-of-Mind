@@ -9,9 +9,9 @@ export default function GuidedMeditationSection() {
         </h2>
         <p className="text-xl font-semibold text-center">
           Dive into the world of mindfulness with our handpicked guided
-          meditations. Whether you're a beginner or an experienced meditator,
-          these resources will help you recharge, focus, and find inner peace.
-          Start your journey toward a calmer you today.
+          meditations. Whether you&apos;re a beginner or an experienced
+          meditator, these resources will help you recharge, focus, and find
+          inner peace. Start your journey toward a calmer you today.
         </p>
       </div>
       <div className="flex flex-wrap justify-evenly items-center gap-4">

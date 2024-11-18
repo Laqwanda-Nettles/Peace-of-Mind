@@ -9,10 +9,10 @@ export default function TipsSections() {
         </h2>
         <p className="text-xl font-semibold text-center">
           Mood tracking and journaling are powerful tools to understand and
-          manage your emotions. Whether you're new to the practice or a seasoned
-          journaler, these tips will guide you toward emotional awareness,
-          helping you spot patterns, release stress, and improve your mental
-          well-being.
+          manage your emotions. Whether you&apos;re new to the practice or a
+          seasoned journaler, these tips will guide you toward emotional
+          awareness, helping you spot patterns, release stress, and improve your
+          mental well-being.
         </p>
       </div>
       <section className="flex justify-center gap-4 items-center flex-wrap">
