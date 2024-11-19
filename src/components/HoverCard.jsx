@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 export default function HoverCard({ imageSrc, title, details }) {
   return (
-    <div className="relative w-80 h-60 overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div className="relative w-80 h-60 overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
       {/* Image Display */}
       <img
         src={imageSrc}
