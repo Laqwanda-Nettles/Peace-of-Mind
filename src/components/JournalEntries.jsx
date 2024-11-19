@@ -21,7 +21,22 @@ export default function JournalEntries() {
 
   return (
     <div className="bg-neutral p-4 m-4 rounded-md">
-      <h2 className="text-3xl font-bold mb-4">Recent Journal Entries</h2>
+      <div className="flex justify-between">
+        <h2 className="text-3xl font-bold mb-4">Recent Journal Entries</h2>
+        <button className="text-success mr-2" onClick={fetchEntries}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="2.5em"
+            height="2.5em"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M17.65 6.35A7.96 7.96 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4z"
+            ></path>
+          </svg>
+        </button>
+      </div>
       <div className="space-y-4">
         {entries.map((entry, index) => (
           <div key={index} className="border-b-2 border-primary pb-4">
