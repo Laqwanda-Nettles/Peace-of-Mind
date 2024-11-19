@@ -32,12 +32,11 @@ export default function Journal() {
 
   return (
     <div>
-      <div className="flex items-center w-full justify-between">
-        <Sidebar />
-        <h2 className="text-4xl font-bold">Journal Dashboard</h2>
-        <div>
-          <ThemeToggle />
-        </div>
+      <Sidebar />
+      <div>
+        <h2 className="text-4xl font-bold text-center my-5">
+          Journal Dashboard
+        </h2>
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 m-4">
