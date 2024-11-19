@@ -321,6 +321,72 @@ The completed Resource Page includes:
 
 This concludes Day 6, successfully completing the Resource Page for the **Peace of Mind** project. 😌✌️
 
+Here’s a detailed README draft documenting your Day 7 progress for the "Peace of Mind" project:
+
+---
+
+## Peace of Mind Project - Day 7 Progress
+
+### Overview
+
+On Day 7, I focused on resolving compatibility issues, enhancing dynamic features, and finalizing core components for the **Journal Dashboard** page. This update significantly improved the project's usability and functionality by integrating advanced visualization, dynamic API fetching, and a clean user experience.
+
+---
+
+### Key Updates
+
+#### 1. **Resolved Compatibility Issues**
+
+- **Downgraded Next.js, React, and ReactDOM:**  
+  Addressed versioning conflicts by downgrading to earlier compatible versions:
+
+  - Next.js: 14.2.15
+  - React: 18
+  - ReactDOM: 18
+
+- **Fixed Chart Issue with Recharts:**  
+  Successfully integrated **Recharts** to replace the previous chart library, ensuring better compatibility and performance for mood tracking visualizations.
+
+---
+
+#### 2. **Journal Dashboard Finalized**
+
+The Journal Dashboard was refined to include the following features:
+
+#### a) **Components**
+
+- **JournalEntries:** Displays a paginated list of recent journal entries, with options to "view more" for detailed access.
+- **JournalForm:** Allows users to submit daily entries, ensuring a seamless journaling experience.
+- **MoodChart:** Visualizes mood data dynamically, giving users insights into their emotional patterns.
+- **MoodCheck:** Enables users to make quick mood entries, fostering consistent self-reflection.
+- **Sidebar:** Provides intuitive navigation between pages.
+- **QuoteCard:** Fetches and displays an inspirational quote from the Ninja API, enhancing the user experience with motivational content.
+
+#### b) **Layout**
+
+The page follows a responsive grid layout with four sections:
+
+- **Welcome Header:** Personalized greeting to the user.
+- **Quick Mood Entry:** Simplified mood tracking input.
+- **Journal Entries Overview:** Displays recent entries with pagination.
+- **Mood Tracker Summary:** Visual representation of user mood data.
+
+#### c) **Dynamic Features**
+
+- **API Fetching:** Integrated seamless data fetching for journal entries, mood tracker, and quotes.
+- **Pagination:** Users can easily navigate through past journal entries.
+- **Mood Tracker Visualization:** Provides an interactive overview of mood trends over time.
+
+---
+
+### Challenges and Resolutions
+
+- **Chart Library Compatibility:**  
+  **Issue:** Initial integration caused errors due to library versioning.  
+  **Solution:** Replaced with Recharts, ensuring compatibility and functionality.
+
+---
+
 ## Getting Started
 
 First, clone repository and install dependencies:
