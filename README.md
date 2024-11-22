@@ -387,6 +387,53 @@ The page follows a responsive grid layout with four sections:
 
 ---
 
+## **Day 8: Login Page and Magic Link Authentication**
+
+On Day 8, I focused on implementing the login page and the magic link authentication process. This involved creating the login page UI and functionality to send a magic link via email for secure authentication. Here's what was accomplished:
+
+- **Implemented Login Page**:
+
+  - Created a form to collect user email and username.
+  - Added functionality to send a POST request to the `/api/send-magic-link` endpoint.
+  - Displayed a confirmation message upon successfully sending the magic link.
+
+- **Magic Link API Endpoint (`send-magic-link.js`)**:
+
+  - Used **Upstash Redis** to store temporary tokens associated with user email and username for authentication.
+  - Generated unique tokens using `randomUUID`.
+  - Sent an email with a magic link using **Resend API**.
+
+- **Auth Page**:
+  - Built an authentication page to validate tokens.
+  - Fetched and validated user tokens via the `/api/auth` endpoint.
+  - Redirected authenticated users to the journal dashboard or back to the login page upon failure.
+
+## **Day 9: About Page and Authentication Integration**
+
+On Day 9, the focus shifted to finalizing the About page, styling the authentication page, and securing the Journal Dashboard page.
+
+- **About Page**:
+
+  - Completed the About page content, highlighting the mission and purpose of the app.
+  - Styled the page with custom themes using **DaisyUI** and **TailwindCSS**.
+
+- **Authentication Route**:
+
+  - Completed the `/api/auth` endpoint to handle token validation.
+  - Added functionality to store and retrieve user session data in Redis.
+
+- **Journal Dashboard**:
+  - Secured the Journal Dashboard by checking for valid tokens before granting access.
+  - Added logic to redirect unauthenticated users back to the login page.
+
+## **Next Steps**:
+
+- Enhance user experience by adding authenication to journal entries and moods sections.
+- Implement logout functionality and token expiration handling.
+- Finalize any remaining styling updates for a cohesive user interface.
+
+---
+
 ## Getting Started
 
 First, clone repository and install dependencies:
@@ -424,6 +471,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Ice Photo by Pixabay
 - Meditate Photo by Freepik
 - Notebook Photo by Freepik
+- Login Photo By: Kaboompics.com
+- Secure Photo by Miguel Á. Padriñán
 
 ## Royalty Free Music
 
