@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Dancing_Script } from "next/font/google";
 import ThemeToggle from "./ThemeToggle";
+import Logout from "./Logout";
 
 const dancing = Dancing_Script({ subsets: ["latin"] });
 
@@ -40,6 +41,9 @@ export default function Navbar() {
             </li>
             <li>
               <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Logout />
             </li>
           </ul>
         </div>

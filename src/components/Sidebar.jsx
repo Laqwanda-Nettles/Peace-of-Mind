@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Dancing_Script } from "next/font/google";
 import ThemeToggle from "./ThemeToggle";
+import Logout from "./Logout";
 
 const dancing = Dancing_Script({ subsets: ["latin"] });
 
@@ -134,6 +135,9 @@ export default function Sidebar() {
                 </svg>
                 About
               </Link>
+            </li>
+            <li className="mt-[400px]">
+              <Logout />
             </li>
           </ul>
         </div>
