@@ -4,9 +4,14 @@ const redis = Redis.fromEnv();
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
+    const { token } = req.query;
+
+    const result = await redis.get(`magiclink:${token}`);
+    const email = result.email;
+
     try {
       //Get the list of mood entries
-      const moodEntries = await redis.lrange("mood_entries", 0, -1);
+      const moodEntries = await redis.lrange(`mood_entries:${email}`, 0, -1);
 
       //Parse entries
       const parsedEntries = moodEntries.map((entry) => {
