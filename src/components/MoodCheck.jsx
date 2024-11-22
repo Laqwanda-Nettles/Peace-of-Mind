@@ -30,7 +30,7 @@ export default function MoodCheck() {
         type: "warning",
         text: "You are not logged in. Redirecting to login page...",
       });
-      //setTimeout(() => router.push("/login"), 4000);
+      setTimeout(() => router.push("/login"), 4000);
     }
   }, [router]);
 
