@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 // Map mood values to labels
 const moodOptions = [
@@ -12,6 +13,26 @@ const moodOptions = [
 
 export default function MoodCheck() {
   const [rating, setRating] = useState("");
+  const [alertMsg, setAlertMsg] = useState(null);
+  const router = useRouter();
+
+  const alertClasses = {
+    success: "alert-success",
+    error: "alert-error",
+    warning: "alert-warning",
+    info: "alert-info",
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setAlertMsg({
+        type: "warning",
+        text: "You are not logged in. Redirecting to login page...",
+      });
+      //setTimeout(() => router.push("/login"), 4000);
+    }
+  }, [router]);
 
   const onOptionChange = (e) => {
     setRating(e.target.value);
@@ -19,7 +40,10 @@ export default function MoodCheck() {
 
   const handleTrackMood = async () => {
     if (!rating) {
-      alert("Please select a mood before submitting.");
+      setAlertMsg({
+        type: "error",
+        text: "Please select a mood before submitting.",
+      });
       return;
     }
 
@@ -36,24 +60,41 @@ export default function MoodCheck() {
         body: JSON.stringify({
           mood: moodLabel,
           date: new Date().toISOString(),
+          email: localStorage.getItem("email"),
+          token: localStorage.getItem("token"),
         }),
       });
 
       if (response.ok) {
-        alert(`Your (${moodLabel}) mood has been tracked!`);
+        setAlertMsg({
+          type: "success",
+          text: `Your (${moodLabel}) mood has been tracked!`,
+        });
         setRating(""); // Reset the form
       } else {
         console.error("Failed to save mood:", response.statusText);
-        alert("Failed to track mood. Please try again.");
+        setAlertMsg({
+          type: "error",
+          text: "Failed to track mood. Please try again.",
+        });
       }
     } catch (error) {
       console.error("Error saving mood:", error);
-      alert("An error occurred while tracking your mood.");
+      setAlertMsg({
+        type: "error",
+        text: "An error occurred while tracking your mood.",
+      });
     }
   };
 
   return (
     <div className="rating gap-1 bg-neutral p-4 rounded-xl flex flex-col">
+      {alertMsg && (
+        <div className={`alert ${alertClasses[alertMsg.type]} shadow-lg mb-4`}>
+          <span>{alertMsg.text}</span>
+        </div>
+      )}
+
       <div className="flex gap-2 justify-center flex-wrap mb-2">
         {moodOptions.map(({ value, emoji, label, color }) => (
           <div key={value} className="flex flex-col items-center gap-1">
