@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import HoverCard from "@/components/HoverCard";
 import Navbar from "@/components/Navbar";
 import QuoteCard from "@/components/QuoteCard";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -48,7 +49,7 @@ export default function Home() {
                 supportive resources.
               </p>
               <button className="btn btn-primary text-lg">
-                Start Journaling Today
+                <Link href="/login">Start Journaling Today</Link>
               </button>
             </div>
           </div>
