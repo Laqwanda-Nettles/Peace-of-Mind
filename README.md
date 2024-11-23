@@ -434,6 +434,68 @@ On Day 9, the focus shifted to finalizing the About page, styling the authentica
 
 ---
 
+## Day 10: Debugging Challenges
+
+Today was a true developer's day—filled with relentless debugging and learning through trial and error. My focus was on fixing issues related to fetching user-specific journal entries and moods in my **Peace of Mind** project. Here's an overview of what I worked on:
+
+---
+
+### 🛠️ **Key Updates and Fixes**:
+
+1. **Validation Utilities**:  
+   Added a utility function to handle validating tokens and emails for authentication. This helped ensure API requests were secure and accurate.
+
+2. **Redis Data Handling**:
+
+   - Redis was returning an object, not JSON, which meant parsing the data was unnecessary.
+   - Adjusted code to use the raw object directly, resolving issues with incorrect data handling.
+
+3. **Improved Debugging Techniques**:
+
+   - Logged nearly everything using `console.log` to track down errors.
+   - This iterative approach revealed issues with missing authentication details, response parsing, and API endpoint parameters.
+
+4. **Error Feedback**:  
+   Enhanced error messages in both the **JournalEntries** and **MoodChart** components to provide clear feedback for failed API calls.
+
+5. **Loading States**:  
+   Improved UX by refining loading indicators and handling edge cases (e.g., no entries or moods found).
+
+---
+
+### Lessons Learned:
+
+- 🧩 Debugging is a puzzle: Fixing one issue often uncovers another, but persistence pays off.
+- 🛠️ Always understand the data format being returned by APIs and databases.
+- 🕵️‍♂️ Detailed logging is invaluable for identifying root causes of errors.
+
+---
+
+### Components Updated:
+
+1. **JournalEntries.jsx**:
+
+   - Validated tokens and emails before fetching entries.
+   - Resolved data parsing issue by using the raw Redis object directly.
+
+2. **JournalForm.jsx**:
+
+   - Enhanced error handling for failed submissions.
+   - Added user feedback for successful entries.
+
+3. **MoodChart.jsx**:
+
+   - Improved data mapping for mood entries using predefined days of the week.
+   - Refined the chart's visualization and error logging.
+
+4. **MoodCheck.jsx**:
+   - Redirected unauthenticated users to the login page.
+   - Improved form validation for tracking moods.
+
+---
+
+Despite the challenges, today was a great learning experience, and the app is now more robust.
+
 ## Getting Started
 
 First, clone repository and install dependencies:
