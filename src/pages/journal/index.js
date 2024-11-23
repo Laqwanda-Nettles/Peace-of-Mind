@@ -5,11 +5,26 @@ import MoodChart from "@/components/MoodChart";
 import MoodCheck from "@/components/MoodCheck";
 import QuoteCard from "@/components/QuoteCard";
 import Sidebar from "@/components/Sidebar";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Journal() {
   const [quotes, setQuotes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [alertMsg, setAlertMsg] = useState(null);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setAlertMsg({
+        type: "warning",
+        text: "You are not logged in. Redirecting to login page...",
+      });
+      setTimeout(() => router.push("/login"), 4000);
+    }
+  }, [router]);
 
   const URL = "/api/quote";
 
@@ -32,10 +47,17 @@ export default function Journal() {
   return (
     <div>
       <Sidebar />
-      <div>
+      <div className="flex flex-col items-center">
         <h2 className="text-4xl font-bold text-center my-5">
           Journal Dashboard
         </h2>
+        {alertMsg && (
+          <div className="alert alert-warning shadow-lg mb-4 w-2/3">
+            <span className="text-center text-xl font-semibold">
+              {alertMsg.text}
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 m-4">

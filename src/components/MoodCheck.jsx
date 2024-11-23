@@ -22,16 +22,6 @@ export default function MoodCheck() {
     info: "alert-info",
   };
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      setAlertMsg({
-        type: "warning",
-        text: "You are not logged in. Redirecting to login page...",
-      });
-    }
-  }, []);
-
   const onOptionChange = (e) => {
     setRating(e.target.value);
   };
