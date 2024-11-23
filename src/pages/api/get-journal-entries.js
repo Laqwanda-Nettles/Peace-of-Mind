@@ -1,5 +1,5 @@
 import { Redis } from "@upstash/redis";
-import { validateToken } from "../utils/validate";
+import { validateToken } from "../utils/validateToken";
 
 const redis = Redis.fromEnv();
 
