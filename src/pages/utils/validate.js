@@ -2,7 +2,7 @@ import { Redis } from "@upstash/redis";
 
 const redis = Redis.fromEnv();
 
-export async function validateToken(token, email) {
+export default async function validateToken(token, email) {
   if (!token || !email) {
     return { status: 400, message: "Token and email are required." };
   }
