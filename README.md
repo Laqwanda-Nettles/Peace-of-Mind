@@ -1,5 +1,11 @@
 # Peace of Mind
 
+Peace of Mind is a mental health journaling app designed to help users reflect on their emotions, track their moods, and rediscover themselves. Inspired by the Lauryn Hill song ["I Gotta Peace of Mind"](https://www.youtube.com/watch?v=pb7KjMTgK-Q) and my own journey of self-discovery, this app creates a safe space for users to pause, reflect, and find clarity in their lives.
+
+Life often moves too fast, leaving us caught up in daily routines, self-doubt, and emotional challenges. Through features like personal journaling, mood tracking, and inspirational resources, Peace of Mind helps users reconnect with themselves and build a foundation for emotional resilience. With protected journal entries and dynamic visual tools, users can celebrate their progress and find the encouragement to keep growing.
+
+This project is a deeply personal endeavor to offer not just an app, but a meaningful tool for those seeking balance and a better understanding of themselves. Peace of Mind is about discovering who you are and becoming the best version of yourself, one entry at a time.
+
 ## Day 1: Wireframe/Mockup & Initial Setup
 
 ### Overview
@@ -539,3 +545,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Royalty Free Music
 
 Song by <a href="https://stocktune.com/free-music/whispers-of-the-stream-66136-56579">StockTune</a>
+
+## Project Powerpoint
+
+[Presentation](https://www.canva.com/design/DAGXTvOYTkY/2J0FlKXhIi_dXSiueLP0vw/view?utm_content=DAGXTvOYTkY&utm_campaign=designshare&utm_medium=link&utm_source=editor)
