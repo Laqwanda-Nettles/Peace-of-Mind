@@ -4,15 +4,26 @@ const redis = Redis.fromEnv();
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { date, content } = req.body;
+    const { token, email, date, content } = req.body;
 
-    if (!date || !content) {
-      return res.status(400).json({ error: "Date and content are required." });
+    if (!token || !email || !date || !content) {
+      return res
+        .status(400)
+        .json({ error: "Token, email, date and content are required." });
     }
 
     try {
-      const entry = JSON.stringify({ date, content });
-      await redis.lpush("journalEntries", entry);
+      //Validate token
+      const tokenData = await redis.get(`magiclink:${token}`);
+      if (!tokenData) {
+        return res.status(401).json({ message: "Invalid or expired token." });
+      }
+
+      const entry = { date, content };
+
+      //Add entry to user-specific list
+      const key = `journalEntries:${email}`;
+      await redis.lpush(key, JSON.stringify(entry));
 
       res.status(201).json({ message: "Journal entry added successfully!" });
     } catch (error) {
