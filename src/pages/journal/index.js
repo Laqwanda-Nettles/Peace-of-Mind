@@ -5,7 +5,6 @@ import MoodChart from "@/components/MoodChart";
 import MoodCheck from "@/components/MoodCheck";
 import QuoteCard from "@/components/QuoteCard";
 import Sidebar from "@/components/Sidebar";
-import ThemeToggle from "@/components/ThemeToggle";
 import { useEffect, useState } from "react";
 
 export default function Journal() {
