@@ -3,15 +3,37 @@ import { useEffect, useState } from "react";
 
 export default function JournalEntries() {
   const [entries, setEntries] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const router = useRouter();
 
   const fetchEntries = async () => {
+    setLoading(true);
+    setError(null);
+
     try {
-      const res = await fetch(`/api/get-journal-entries?page=1&limit=3`);
+      const token = localStorage.getItem("token");
+      const email = localStorage.getItem("email");
+
+      if (!token || !email) {
+        throw new Error("Missing authentication details. Please log in.");
+      }
+
+      const res = await fetch(
+        `/api/get-journal-entries?token=${token}&email=${email}&page=1&limit=3`
+      );
       const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Error fetching entries.");
+      }
+
       setEntries(data);
     } catch (error) {
       console.error("Error fetching entries:", error);
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -23,7 +45,11 @@ export default function JournalEntries() {
     <div className="bg-neutral p-4 m-4 rounded-md">
       <div className="flex justify-between">
         <h2 className="text-3xl font-bold mb-4">Recent Journal Entries</h2>
-        <button className="text-success mr-2" onClick={fetchEntries}>
+        <button
+          className="text-success mr-2"
+          onClick={fetchEntries}
+          disabled={loading}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="2.5em"
@@ -37,14 +63,30 @@ export default function JournalEntries() {
           </svg>
         </button>
       </div>
-      <div className="space-y-4">
-        {entries.map((entry, index) => (
-          <div key={index} className="border-b-2 border-primary pb-4">
-            <p className="text-lg font-semibold text-gray-500">{entry.date}</p>
-            <p className="text-xl">{entry.content}</p>
-          </div>
-        ))}
-      </div>
+
+      {loading ? (
+        <div className="text-center text-secondary text-lg">Loading...</div>
+      ) : error ? (
+        <div className="text-center text-error text-lg">{error}</div>
+      ) : (
+        <div className="space-y-4">
+          {entries.length > 0 ? (
+            entries.map((entry, index) => (
+              <div key={index} className="border-b-2 border-primary pb-4">
+                <p className="text-lg font-semibold text-gray-500">
+                  {entry.date}
+                </p>
+                <p className="text-xl">{entry.content}</p>
+              </div>
+            ))
+          ) : (
+            <div className="text-center text-gray-500">
+              No journal entries found.
+            </div>
+          )}
+        </div>
+      )}
+
       <div className="flex justify-center">
         <button
           className="btn btn-primary mt-4 text-lg"
