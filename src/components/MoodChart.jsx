@@ -16,7 +16,13 @@ export default function MoodChart() {
   const fetchMoodData = async () => {
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        throw new Error("Token not found. Please log in.");
+      }
       const response = await fetch(`api/get-moods?token=${token}`);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
       const data = await response.json();
 
       const daysOfWeek = [
