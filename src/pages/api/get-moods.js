@@ -7,6 +7,9 @@ export default async function handler(req, res) {
     const { token } = req.query;
 
     const result = await redis.get(`magiclink:${token}`);
+    if (!result || !result.email) {
+      return res.status(400).json({ error: "Invalid token or no user found." });
+    }
     const email = result.email;
 
     try {
