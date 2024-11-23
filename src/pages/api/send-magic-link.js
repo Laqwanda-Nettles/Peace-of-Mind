@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     const token = randomUUID();
 
     const magicLink = `${process.env.NEXT_PUBLIC_BASE_URL}/auth?token=${token}&email=${email}`;
-    console.log("MagicLink: ", magicLink);
+
     await redis.set(`magiclink:${token}`, JSON.stringify({ email, username }), {
       ex: 900,
     });
