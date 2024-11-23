@@ -1,22 +1,24 @@
 import { Redis } from "@upstash/redis";
+import { validateToken } from "../utils/validate";
 
 const redis = Redis.fromEnv();
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
-    const { token } = req.query;
-    console.log("Token from Api: ", token);
+    const { token, email } = req.query;
+    const validationResult = await validateToken(token, email);
 
-    const result = await redis.get(`magiclink:${token}`);
-    console.log(result);
-    if (result) {
-      res.status(200).json({
-        message: "It worked",
-        email: result.email,
-        username: result.username,
-      });
-    } else {
-      res.status(401).json({ message: "Access Denied" });
+    if (validationResult.status !== 200) {
+      return res
+        .status(validationResult.status)
+        .json({ message: validationResult.message });
     }
+
+    res
+      .status(200)
+      .json({ message: "It worked", email, username: "ExampleUser" });
+  } else {
+    res.setHeader("Allow", ["GET"]);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
