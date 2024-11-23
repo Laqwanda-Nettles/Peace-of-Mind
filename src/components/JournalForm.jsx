@@ -5,18 +5,26 @@ export default function JournalForm() {
     const date = e.target.date.value;
     const content = e.target.content.value;
 
+    const token = localStorage.getItem("token");
+    const email = localStorage.getItem("email");
+    if (!token || !email) {
+      alert("Please log in first.");
+      return;
+    }
+
     try {
       const response = await fetch("/api/add-journal-entry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ date, content }),
+        body: JSON.stringify({ token, email, date, content }),
       });
 
       if (response.ok) {
         alert("Journal entry added successfully!");
         e.target.reset();
       } else {
-        console.error("Error: ", await response.json());
+        const errorData = await response.json();
+        console.error("Error: ", errorData);
         alert("Failed to add journal entry.");
       }
     } catch (error) {
