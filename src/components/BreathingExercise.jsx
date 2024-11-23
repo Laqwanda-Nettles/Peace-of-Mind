@@ -5,8 +5,8 @@ export default function BreathingExercise() {
   const [step, setStep] = useState(0);
   const steps = [
     { label: "Inhale", duration: 4000 }, // 4 seconds
-    { label: "Hold", duration: 4000 }, // 4 seconds
-    { label: "Exhale", duration: 6000 }, // 6 seconds
+    { label: "Hold", duration: 7000 }, // 7 seconds
+    { label: "Exhale", duration: 8000 }, // 8 seconds
     { label: "Rest", duration: 2000 }, // 2 seconds
   ];
 
@@ -60,7 +60,7 @@ export default function BreathingExercise() {
           <div
             className={`absolute inset-0 rounded-full bg-blue-300 shadow-lg shadow-cyan-600 transition-transform`}
             style={{
-              transform: step === 0 || step === 2 ? "scale(1.2)" : "scale(1)",
+              transform: step === 0 || step === 2 ? "scale(1.4)" : "scale(1)",
               transitionDuration: `${steps[step].duration}ms`,
             }}
           ></div>
@@ -96,8 +96,8 @@ export default function BreathingExercise() {
           </summary>
           <ul className="mt-2 list-disc pl-6">
             <li>Inhale deeply for 4 seconds.</li>
-            <li>Hold your breath for 4 seconds.</li>
-            <li>Exhale slowly for 6 seconds.</li>
+            <li>Hold your breath for 7 seconds.</li>
+            <li>Exhale slowly for 8 seconds.</li>
             <li>Rest for 2 seconds before repeating.</li>
           </ul>
         </details>
