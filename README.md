@@ -525,6 +525,20 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## .env.local.example
+
+Setup for .env.local file
+
+```sh
+NINJAS_API_KEY=<Your API KEY>
+KV_URL=<From Vercel>
+KV_REST_API_READ_ONLY_TOKEN=<From Vercel>
+KV_REST_API_TOKEN=<From Vercel>
+KV_REST_API_URL=<From Vercel>
+RESEND_API_KEY=<Your API KEY>
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
 ## Photo Credits
 
 - Journal Photo by Jess Bailey Designs
