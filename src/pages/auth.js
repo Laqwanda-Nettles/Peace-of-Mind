@@ -8,7 +8,6 @@ export default function AuthPage() {
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    console.log("Search Params: ", searchParams.get("token", "email"));
 
     const token = searchParams.get("token");
     const email = searchParams.get("email");
@@ -18,13 +17,14 @@ export default function AuthPage() {
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth?token=${token}&email=${email}`
       );
       const data = await response.json();
-      console.log(data);
+
       if (response.status === 200) {
         localStorage.setItem("token", token);
         localStorage.setItem("email", email);
         console.log("Auth Page status: ", response.status);
         router.push("/journal");
       } else {
+        console.error("Authentication failed: ", data.message);
         router.push("/login");
       }
     };
