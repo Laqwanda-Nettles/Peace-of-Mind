@@ -47,6 +47,17 @@ export default function MoodCheck() {
       return;
     }
 
+    const token = localStorage.getItem("token");
+    const email = localStorage.getItem("email");
+
+    if (!token || !email) {
+      setAlertMsg({
+        type: "error",
+        text: "Missing authentication details. Please log in.",
+      });
+      return;
+    }
+
     const selectedMood = moodOptions.find((mood) => mood.value === rating);
     const moodLabel = selectedMood ? selectedMood.label : "Unknown";
 
@@ -60,8 +71,8 @@ export default function MoodCheck() {
         body: JSON.stringify({
           mood: moodLabel,
           date: new Date().toISOString(),
-          email: localStorage.getItem("email"),
-          token: localStorage.getItem("token"),
+          email,
+          token,
         }),
       });
 
