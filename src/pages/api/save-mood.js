@@ -11,6 +11,11 @@ export default async function handler(req, res) {
     }
 
     const result = await redis.get(`magiclink:${token}`);
+    if (!result || !result.email) {
+      return res
+        .status(400)
+        .json({ error: "Invalid token or user not authenticated." });
+    }
     const email = result.email;
 
     try {
