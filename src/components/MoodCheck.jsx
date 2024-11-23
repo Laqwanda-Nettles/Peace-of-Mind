@@ -14,7 +14,6 @@ const moodOptions = [
 export default function MoodCheck() {
   const [rating, setRating] = useState("");
   const [alertMsg, setAlertMsg] = useState(null);
-  const router = useRouter();
 
   const alertClasses = {
     success: "alert-success",
@@ -30,9 +29,8 @@ export default function MoodCheck() {
         type: "warning",
         text: "You are not logged in. Redirecting to login page...",
       });
-      setTimeout(() => router.push("/login"), 4000);
     }
-  }, [router]);
+  }, []);
 
   const onOptionChange = (e) => {
     setRating(e.target.value);
