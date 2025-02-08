@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Journal() {
-  const [quotes, setQuotes] = useState([]);
+  const [quote, setQuote] = useState([]);
   const [loading, setLoading] = useState(true);
   const [alertMsg, setAlertMsg] = useState(null);
 
@@ -26,13 +26,13 @@ export default function Journal() {
     }
   }, [router]);
 
-  const URL = "/api/quote";
+  const URL = "/api/quotes";
 
   const fetchQuotes = async () => {
     try {
       const result = await fetch(URL);
       const data = await result.json();
-      setQuotes(data);
+      setQuote(data);
     } catch (error) {
       console.error("Error fetching data from API: ", error);
     } finally {
@@ -74,13 +74,7 @@ export default function Journal() {
             </div>
           ) : (
             <div>
-              {quotes.map((quote, index) => (
-                <QuoteCard
-                  key={index}
-                  quote={quote.quote}
-                  author={quote.author}
-                />
-              ))}
+              {quote && <QuoteCard quote={quote.quote} author={quote.author} />}
             </div>
           )}
         </div>
